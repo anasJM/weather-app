@@ -1,0 +1,138 @@
+body {
+    background-color: rgb(57, 41, 126);
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/* container */
+.container {
+    height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px 100px;
+}
+
+/* header  */
+#header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+form {
+    display: flex;
+    /* gap: 20px; */
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(255, 255, 255, 0.066); */
+    /* padding: 20px; */
+    border-radius: 5px;
+}
+
+select,
+::picker(select) {
+    appearance: base-select;
+}
+
+form select {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.066);
+    border: 0;
+    padding: 20px 100px;
+    color: white;
+    border-radius: 2;
+    border: solid rgba(255, 255, 255, 0.121) 1px;
+}
+
+
+::picker(select) {
+    padding: 5px;
+    border-radius: 8px;
+    border: solid rgba(255, 255, 255, 0.121) 1px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgb(57, 41, 126);
+    color: white;
+    margin-top: 10px;
+}
+
+#overview-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#overview-header h4,
+#overview-header h2 {
+    margin: 0;
+}
+
+#overview-header h4 {
+    opacity: 70%;
+    font-weight: 100;
+}
+
+#overview-header h2 {
+    font-weight: bold;
+}
+
+/* actual weather */
+#actual-weather {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+#overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#overview-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#overview-2 {
+    margin: 0;
+}
+
+#overview-1 h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+/* details */
+#details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.066);
+    border-radius: 8px;
+    border: solid rgba(255, 255, 255, 0.121) 1px;
+    padding: 30px;
+}
+
+#details h5 {
+    font-weight: 100;
+    opacity: 60%;
+}
+
+#details h2,
+#details h5 {
+    margin: 5px;
+}

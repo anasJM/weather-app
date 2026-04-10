@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather app</title>
+<script defer src="main.js"></script></head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <!-- select input -->
+            <form action="">
+                <!-- <label for="city-input">Choose a city</label> -->
+                <select type="text" name="input" id="city-input">
+                    <option value="none" disabled>Choose a city</option>
+                    <option value="rabat">Rabat</option>
+                    <option value="casablanca">Casablanca</option>
+                    <option value="newyork">Newyork</option>
+                    <option value="berlin">Berlin</option>
+                    <option value="paris">Paris</option>
+                    <option value="karaul">Karaul</option>
+                    <option value="compton">Compton</option>
+                    <option value="marrakech" selected>Marrakech</option>
+                    <option value="errachidia">Errachidia</option>
+                    <option value="tanger">tanger</option>
+                    <option value="bejin">Bejin</option>
+                    <option value="tokyo">Tokyo</option>
+                    <option value="moscow">Moscow</option>
+                    <option value="jakarta">Jakarta</option>
+                    <option value="sydney">Sydney</option>
+                </select>
+            </form>
+
+            <!-- overview-header -->
+            <div id="overview-header">
+                <h4>Actual weather</h4>
+                <h2 class="time">17:40</h2>
+            </div>
+        </div>
+
+        <!-- actual-weather -->
+        <div id="actual-weather">
+
+            <!-- overview -->
+            <div id="overview">
+                <div id="overview-1">
+                    <img src="63b221ee7a2d03d75a54.svg" id="icon" alt="" width="100">
+                    <h1 id="degree">25</h1>
+                </div>
+                <h1 id="overview-2">
+                    Mostly Sunny
+                </h1>
+            </div>
+        </div>
+
+        <!-- details -->
+        <div id="details">
+            <div>
+                <h5>Wind</h5>
+                <h2 id="wind">10 km/h</h2>
+            </div>
+            <div>
+                <h5>Humidity</h5>
+                <h2 id="humidity">10 km/h</h2>
+            </div>
+            <div>
+                <h5>Visibility</h5>
+                <h2 id="visibility">10 km/h</h2>
+            </div>
+            <div>
+                <h5>Pressure</h5>
+                <h2 id="pressure">10 km/h</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

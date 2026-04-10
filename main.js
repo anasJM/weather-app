@@ -110,13 +110,83 @@ eval("{\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleEle
 
 /***/ },
 
+/***/ "./src/img/LightSnow.svg"
+/*!*******************************!*\
+  !*** ./src/img/LightSnow.svg ***!
+  \*******************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fce51f437ccd8ebba1a4.svg";
+
+/***/ },
+
+/***/ "./src/img/ModerateRain.svg"
+/*!**********************************!*\
+  !*** ./src/img/ModerateRain.svg ***!
+  \**********************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "32d7fbcdd6a3d81f1862.svg";
+
+/***/ },
+
+/***/ "./src/img/cloudy.svg"
+/*!****************************!*\
+  !*** ./src/img/cloudy.svg ***!
+  \****************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "1592841504cb961098b7.svg";
+
+/***/ },
+
+/***/ "./src/img/fog.svg"
+/*!*************************!*\
+  !*** ./src/img/fog.svg ***!
+  \*************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "3ed73abbfaf72a1fbae9.svg";
+
+/***/ },
+
+/***/ "./src/img/partially-cloudy.svg"
+/*!**************************************!*\
+  !*** ./src/img/partially-cloudy.svg ***!
+  \**************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "c22e6194b597133a8ae3.svg";
+
+/***/ },
+
+/***/ "./src/img/sunny.svg"
+/*!***************************!*\
+  !*** ./src/img/sunny.svg ***!
+  \***************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "6e739ea676df7c475bf2.svg";
+
+/***/ },
+
+/***/ "./src/img/windy.svg"
+/*!***************************!*\
+  !*** ./src/img/windy.svg ***!
+  \***************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "330ebe665acbcc31b087.svg";
+
+/***/ },
+
 /***/ "./src/index.js"
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _weather_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weather.js */ \"./src/weather.js\");\n\r\n\r\n\r\n// DOM\r\nconst time = document.querySelector(\".time\")\r\nconst icon = document.querySelector(\"#icon\")\r\nconst degree = document.querySelector(\"#degree\")\r\nconst description = document.querySelector(\"#overview-2\")\r\nconst wind = document.querySelector(\"#wind\")\r\nconst humidity = document.querySelector(\"#humidity\")\r\nconst visibility = document.querySelector(\"#visibility\")\r\nconst pressure = document.querySelector(\"#pressure\")\r\n\r\n// city select input\r\nconst select_input = document.querySelector(\"#city-input\")\r\n\r\n// select input, \"change\" event listener\r\nselect_input.addEventListener(\"change\", async () => {\r\n    const weather = await (0,_weather_js__WEBPACK_IMPORTED_MODULE_1__.getCurrentWeather)(select_input.value)\r\n    // changing values\r\n    time.textContent = await getCurrentCityTime(select_input.value)\r\n    // formule: (33.8°F − 32) × 5/9 = 1°C\r\n    const celcius = (weather.temp - 32) * 5 / 9\r\n    degree.textContent = parseInt(celcius, 10) + \"°C\"\r\n    description.textContent = weather.conditions\r\n    wind.textContent = weather.windspeed + \" km/h\"\r\n    humidity.textContent = weather.humidity + \" %\"\r\n    visibility.textContent = weather.visibility + \" km\"\r\n    pressure.textContent = weather.pressure + \" hPa\"\r\n    // icon\r\n    if (weather.snow > 0) {\r\n        // snow \r\n        icon.src = \"img/LightSnow.svg\"\r\n    } else if (weather.windspeed < 1) {\r\n        // fog \r\n        icon.src = \"img/.svg\"\r\n    } else if (weather.windspeed > 30) {\r\n        // wind \r\n        icon.src = \"img/windy.svg\"\r\n    } else if (weather.cloudcover > 90) {\r\n        // cloudy \r\n        icon.src = \"img/cloundy.svg\"\r\n    } else if (weather.cloudcover > 20 && weather.cloudcover < 90) {\r\n        // partly-cloudy-day\r\n        icon.src = \"img/partially-cloudy.svg\"\r\n    } else if (weather.cloudcover < 20) {\r\n        // partly-cloudy-day\r\n        icon.src = \"img/sunny.svg\"\r\n    }\r\n\r\n    console.log(weather)\r\n})\r\n\r\n// get the current city date\r\nasync function getCurrentCityTime(city) {\r\n    const date = new Date();\r\n    // getting the timezone from the promise\r\n    const timeZone = await (0,_weather_js__WEBPACK_IMPORTED_MODULE_1__.getCurrentTime)(city)\r\n    // format the timezone\r\n    const formattedTimezone = new Intl.DateTimeFormat(\"en-US\", {\r\n        timeZone: `${timeZone}`,\r\n        timeStyle: \"short\"\r\n    }).format(date);\r\n\r\n    return formattedTimezone;\r\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMiLCJtYXBwaW5ncyI6Ijs7O0FBQW9CO0FBQzRDO0FBQ2hFO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsMEJBQTBCLDhEQUFpQjtBQUMzQztBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsTUFBTTtBQUNOO0FBQ0E7QUFDQSxNQUFNO0FBQ047QUFDQTtBQUNBLE1BQU07QUFDTjtBQUNBO0FBQ0EsTUFBTTtBQUNOO0FBQ0E7QUFDQSxNQUFNO0FBQ047QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLENBQUM7QUFDRDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsMkJBQTJCLDJEQUFjO0FBQ3pDO0FBQ0E7QUFDQSxxQkFBcUIsU0FBUztBQUM5QjtBQUNBLEtBQUs7QUFDTDtBQUNBO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly93ZWF0aGVyLWFwcC8uL3NyYy9pbmRleC5qcz8zNWE4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBcIi4vc3R5bGUuY3NzXCJcclxuaW1wb3J0IHsgZ2V0Q3VycmVudFdlYXRoZXIsIGdldEN1cnJlbnRUaW1lIH0gZnJvbSBcIi4vd2VhdGhlci5qc1wiXHJcblxyXG4vLyBET01cclxuY29uc3QgdGltZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIudGltZVwiKVxyXG5jb25zdCBpY29uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiNpY29uXCIpXHJcbmNvbnN0IGRlZ3JlZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjZGVncmVlXCIpXHJcbmNvbnN0IGRlc2NyaXB0aW9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiNvdmVydmlldy0yXCIpXHJcbmNvbnN0IHdpbmQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI3dpbmRcIilcclxuY29uc3QgaHVtaWRpdHkgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI2h1bWlkaXR5XCIpXHJcbmNvbnN0IHZpc2liaWxpdHkgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI3Zpc2liaWxpdHlcIilcclxuY29uc3QgcHJlc3N1cmUgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI3ByZXNzdXJlXCIpXHJcblxyXG4vLyBjaXR5IHNlbGVjdCBpbnB1dFxyXG5jb25zdCBzZWxlY3RfaW5wdXQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI2NpdHktaW5wdXRcIilcclxuXHJcbi8vIHNlbGVjdCBpbnB1dCwgXCJjaGFuZ2VcIiBldmVudCBsaXN0ZW5lclxyXG5zZWxlY3RfaW5wdXQuYWRkRXZlbnRMaXN0ZW5lcihcImNoYW5nZVwiLCBhc3luYyAoKSA9PiB7XHJcbiAgICBjb25zdCB3ZWF0aGVyID0gYXdhaXQgZ2V0Q3VycmVudFdlYXRoZXIoc2VsZWN0X2lucHV0LnZhbHVlKVxyXG4gICAgLy8gY2hhbmdpbmcgdmFsdWVzXHJcbiAgICB0aW1lLnRleHRDb250ZW50ID0gYXdhaXQgZ2V0Q3VycmVudENpdHlUaW1lKHNlbGVjdF9pbnB1dC52YWx1ZSlcclxuICAgIC8vIGZvcm11bGU6ICgzMy44wrBGIOKIkiAzMikgw5cgNS85ID0gMcKwQ1xyXG4gICAgY29uc3QgY2VsY2l1cyA9ICh3ZWF0aGVyLnRlbXAgLSAzMikgKiA1IC8gOVxyXG4gICAgZGVncmVlLnRleHRDb250ZW50ID0gcGFyc2VJbnQoY2VsY2l1cywgMTApICsgXCLCsENcIlxyXG4gICAgZGVzY3JpcHRpb24udGV4dENvbnRlbnQgPSB3ZWF0aGVyLmNvbmRpdGlvbnNcclxuICAgIHdpbmQudGV4dENvbnRlbnQgPSB3ZWF0aGVyLndpbmRzcGVlZCArIFwiIGttL2hcIlxyXG4gICAgaHVtaWRpdHkudGV4dENvbnRlbnQgPSB3ZWF0aGVyLmh1bWlkaXR5ICsgXCIgJVwiXHJcbiAgICB2aXNpYmlsaXR5LnRleHRDb250ZW50ID0gd2VhdGhlci52aXNpYmlsaXR5ICsgXCIga21cIlxyXG4gICAgcHJlc3N1cmUudGV4dENvbnRlbnQgPSB3ZWF0aGVyLnByZXNzdXJlICsgXCIgaFBhXCJcclxuICAgIC8vIGljb25cclxuICAgIGlmICh3ZWF0aGVyLnNub3cgPiAwKSB7XHJcbiAgICAgICAgLy8gc25vdyBcclxuICAgICAgICBpY29uLnNyYyA9IFwiaW1nL0xpZ2h0U25vdy5zdmdcIlxyXG4gICAgfSBlbHNlIGlmICh3ZWF0aGVyLndpbmRzcGVlZCA8IDEpIHtcclxuICAgICAgICAvLyBmb2cgXHJcbiAgICAgICAgaWNvbi5zcmMgPSBcImltZy8uc3ZnXCJcclxuICAgIH0gZWxzZSBpZiAod2VhdGhlci53aW5kc3BlZWQgPiAzMCkge1xyXG4gICAgICAgIC8vIHdpbmQgXHJcbiAgICAgICAgaWNvbi5zcmMgPSBcImltZy93aW5keS5zdmdcIlxyXG4gICAgfSBlbHNlIGlmICh3ZWF0aGVyLmNsb3VkY292ZXIgPiA5MCkge1xyXG4gICAgICAgIC8vIGNsb3VkeSBcclxuICAgICAgICBpY29uLnNyYyA9IFwiaW1nL2Nsb3VuZHkuc3ZnXCJcclxuICAgIH0gZWxzZSBpZiAod2VhdGhlci5jbG91ZGNvdmVyID4gMjAgJiYgd2VhdGhlci5jbG91ZGNvdmVyIDwgOTApIHtcclxuICAgICAgICAvLyBwYXJ0bHktY2xvdWR5LWRheVxyXG4gICAgICAgIGljb24uc3JjID0gXCJpbWcvcGFydGlhbGx5LWNsb3VkeS5zdmdcIlxyXG4gICAgfSBlbHNlIGlmICh3ZWF0aGVyLmNsb3VkY292ZXIgPCAyMCkge1xyXG4gICAgICAgIC8vIHBhcnRseS1jbG91ZHktZGF5XHJcbiAgICAgICAgaWNvbi5zcmMgPSBcImltZy9zdW5ueS5zdmdcIlxyXG4gICAgfVxyXG5cclxuICAgIGNvbnNvbGUubG9nKHdlYXRoZXIpXHJcbn0pXHJcblxyXG4vLyBnZXQgdGhlIGN1cnJlbnQgY2l0eSBkYXRlXHJcbmFzeW5jIGZ1bmN0aW9uIGdldEN1cnJlbnRDaXR5VGltZShjaXR5KSB7XHJcbiAgICBjb25zdCBkYXRlID0gbmV3IERhdGUoKTtcclxuICAgIC8vIGdldHRpbmcgdGhlIHRpbWV6b25lIGZyb20gdGhlIHByb21pc2VcclxuICAgIGNvbnN0IHRpbWVab25lID0gYXdhaXQgZ2V0Q3VycmVudFRpbWUoY2l0eSlcclxuICAgIC8vIGZvcm1hdCB0aGUgdGltZXpvbmVcclxuICAgIGNvbnN0IGZvcm1hdHRlZFRpbWV6b25lID0gbmV3IEludGwuRGF0ZVRpbWVGb3JtYXQoXCJlbi1VU1wiLCB7XHJcbiAgICAgICAgdGltZVpvbmU6IGAke3RpbWVab25lfWAsXHJcbiAgICAgICAgdGltZVN0eWxlOiBcInNob3J0XCJcclxuICAgIH0pLmZvcm1hdChkYXRlKTtcclxuXHJcbiAgICByZXR1cm4gZm9ybWF0dGVkVGltZXpvbmU7XHJcbn0iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/index.js\n\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _img_LightSnow_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/LightSnow.svg */ \"./src/img/LightSnow.svg\");\n/* harmony import */ var _img_fog_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/fog.svg */ \"./src/img/fog.svg\");\n/* harmony import */ var _img_windy_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/windy.svg */ \"./src/img/windy.svg\");\n/* harmony import */ var _img_ModerateRain_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/ModerateRain.svg */ \"./src/img/ModerateRain.svg\");\n/* harmony import */ var _img_partially_cloudy_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./img/partially-cloudy.svg */ \"./src/img/partially-cloudy.svg\");\n/* harmony import */ var _img_sunny_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./img/sunny.svg */ \"./src/img/sunny.svg\");\n/* harmony import */ var _img_cloudy_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./img/cloudy.svg */ \"./src/img/cloudy.svg\");\n/* harmony import */ var _weather_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./weather.js */ \"./src/weather.js\");\n\r\n// icons\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// api \r\n\r\n\r\n// DOM\r\nconst time = document.querySelector(\".time\")\r\nconst icon = document.querySelector(\"#icon\")\r\nconst degree = document.querySelector(\"#degree\")\r\nconst description = document.querySelector(\"#overview-2\")\r\nconst wind = document.querySelector(\"#wind\")\r\nconst humidity = document.querySelector(\"#humidity\")\r\nconst visibility = document.querySelector(\"#visibility\")\r\nconst pressure = document.querySelector(\"#pressure\")\r\n\r\n// city select input\r\nconst select_input = document.querySelector(\"#city-input\")\r\n\r\nasync function weather() {\r\n    const weather = await (0,_weather_js__WEBPACK_IMPORTED_MODULE_8__.getCurrentWeather)(select_input.value)\r\n    // changing values\r\n    time.textContent = await getCurrentCityTime(select_input.value)\r\n    // formule: (33.8°F − 32) × 5/9 = 1°C\r\n    const celcius = (weather.temp - 32) * 5 / 9\r\n    degree.textContent = parseInt(celcius, 10) + \"°C\"\r\n    description.textContent = weather.conditions\r\n    wind.textContent = weather.windspeed + \" km/h\"\r\n    humidity.textContent = weather.humidity + \" %\"\r\n    visibility.textContent = weather.visibility + \" km\"\r\n    pressure.textContent = weather.pressure + \" hPa\"\r\n\r\n    if (weather.snow > 0) {\r\n        // snow \r\n        icon.src = _img_LightSnow_svg__WEBPACK_IMPORTED_MODULE_1__\r\n    } else if (weather.windspeed < 1) {\r\n        // fog \r\n        icon.src = _img_fog_svg__WEBPACK_IMPORTED_MODULE_2__\r\n    } else if (weather.windspeed > 30) {\r\n        // wind \r\n        icon.src = _img_windy_svg__WEBPACK_IMPORTED_MODULE_3__\r\n    } else if (weather.cloudcover > 90) {\r\n        // cloudy \r\n        icon.src = _img_cloudy_svg__WEBPACK_IMPORTED_MODULE_7__\r\n    } else if (weather.cloudcover > 20 && weather.cloudcover < 90) {\r\n        // partly-cloudy-day\r\n        icon.src = _img_partially_cloudy_svg__WEBPACK_IMPORTED_MODULE_5__\r\n    } else if (weather.cloudcover < 20) {\r\n        // sunny\r\n        icon.src = _img_sunny_svg__WEBPACK_IMPORTED_MODULE_6__\r\n    } else if (weather.precip > 0) {\r\n        // rain\r\n        icon.src = _img_ModerateRain_svg__WEBPACK_IMPORTED_MODULE_4__\r\n    }\r\n\r\n    console.log(weather)\r\n}\r\n\r\n// default weather\r\nweather()\r\n\r\n// select input, \"change\" event listener\r\nselect_input.addEventListener(\"change\", weather)\r\n\r\n// get the current city date\r\nasync function getCurrentCityTime(city) {\r\n    const date = new Date();\r\n    // getting the timezone from the promise\r\n    const timeZone = await (0,_weather_js__WEBPACK_IMPORTED_MODULE_8__.getCurrentTime)(city)\r\n    // format the timezone\r\n    const formattedTimezone = new Intl.DateTimeFormat(\"en-US\", {\r\n        timeZone: `${timeZone}`,\r\n        timeStyle: \"short\"\r\n    }).format(date);\r\n\r\n    return formattedTimezone;\r\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFvQjtBQUNwQjtBQUNzQztBQUNQO0FBQ0k7QUFDTTtBQUNlO0FBQ3JCO0FBQ0U7QUFDckM7QUFDZ0U7QUFDaEU7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsMEJBQTBCLDhEQUFpQjtBQUMzQztBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLG1CQUFtQiwrQ0FBSTtBQUN2QixNQUFNO0FBQ047QUFDQSxtQkFBbUIseUNBQUc7QUFDdEIsTUFBTTtBQUNOO0FBQ0EsbUJBQW1CLDJDQUFLO0FBQ3hCLE1BQU07QUFDTjtBQUNBLG1CQUFtQiw0Q0FBTTtBQUN6QixNQUFNO0FBQ047QUFDQSxtQkFBbUIsc0RBQWU7QUFDbEMsTUFBTTtBQUNOO0FBQ0EsbUJBQW1CLDJDQUFLO0FBQ3hCLE1BQU07QUFDTjtBQUNBLG1CQUFtQixrREFBSTtBQUN2QjtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSwyQkFBMkIsMkRBQWM7QUFDekM7QUFDQTtBQUNBLHFCQUFxQixTQUFTO0FBQzlCO0FBQ0EsS0FBSztBQUNMO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYXRoZXItYXBwLy4vc3JjL2luZGV4LmpzPzM1YTgiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFwiLi9zdHlsZS5jc3NcIlxyXG4vLyBpY29uc1xyXG5pbXBvcnQgc25vdyBmcm9tIFwiLi9pbWcvTGlnaHRTbm93LnN2Z1wiXHJcbmltcG9ydCBmb2cgZnJvbSBcIi4vaW1nL2ZvZy5zdmdcIlxyXG5pbXBvcnQgd2luZHkgZnJvbSBcIi4vaW1nL3dpbmR5LnN2Z1wiXHJcbmltcG9ydCByYWluIGZyb20gXCIuL2ltZy9Nb2RlcmF0ZVJhaW4uc3ZnXCJcclxuaW1wb3J0IHBhcnRseUNsb3VkeURheSBmcm9tIFwiLi9pbWcvcGFydGlhbGx5LWNsb3VkeS5zdmdcIlxyXG5pbXBvcnQgc3VubnkgZnJvbSBcIi4vaW1nL3N1bm55LnN2Z1wiXHJcbmltcG9ydCBjbG91ZHkgZnJvbSBcIi4vaW1nL2Nsb3VkeS5zdmdcIlxyXG4vLyBhcGkgXHJcbmltcG9ydCB7IGdldEN1cnJlbnRXZWF0aGVyLCBnZXRDdXJyZW50VGltZSB9IGZyb20gXCIuL3dlYXRoZXIuanNcIlxyXG5cclxuLy8gRE9NXHJcbmNvbnN0IHRpbWUgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnRpbWVcIilcclxuY29uc3QgaWNvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjaWNvblwiKVxyXG5jb25zdCBkZWdyZWUgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI2RlZ3JlZVwiKVxyXG5jb25zdCBkZXNjcmlwdGlvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjb3ZlcnZpZXctMlwiKVxyXG5jb25zdCB3aW5kID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiN3aW5kXCIpXHJcbmNvbnN0IGh1bWlkaXR5ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiNodW1pZGl0eVwiKVxyXG5jb25zdCB2aXNpYmlsaXR5ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiN2aXNpYmlsaXR5XCIpXHJcbmNvbnN0IHByZXNzdXJlID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiNwcmVzc3VyZVwiKVxyXG5cclxuLy8gY2l0eSBzZWxlY3QgaW5wdXRcclxuY29uc3Qgc2VsZWN0X2lucHV0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiNjaXR5LWlucHV0XCIpXHJcblxyXG5hc3luYyBmdW5jdGlvbiB3ZWF0aGVyKCkge1xyXG4gICAgY29uc3Qgd2VhdGhlciA9IGF3YWl0IGdldEN1cnJlbnRXZWF0aGVyKHNlbGVjdF9pbnB1dC52YWx1ZSlcclxuICAgIC8vIGNoYW5naW5nIHZhbHVlc1xyXG4gICAgdGltZS50ZXh0Q29udGVudCA9IGF3YWl0IGdldEN1cnJlbnRDaXR5VGltZShzZWxlY3RfaW5wdXQudmFsdWUpXHJcbiAgICAvLyBmb3JtdWxlOiAoMzMuOMKwRiDiiJIgMzIpIMOXIDUvOSA9IDHCsENcclxuICAgIGNvbnN0IGNlbGNpdXMgPSAod2VhdGhlci50ZW1wIC0gMzIpICogNSAvIDlcclxuICAgIGRlZ3JlZS50ZXh0Q29udGVudCA9IHBhcnNlSW50KGNlbGNpdXMsIDEwKSArIFwiwrBDXCJcclxuICAgIGRlc2NyaXB0aW9uLnRleHRDb250ZW50ID0gd2VhdGhlci5jb25kaXRpb25zXHJcbiAgICB3aW5kLnRleHRDb250ZW50ID0gd2VhdGhlci53aW5kc3BlZWQgKyBcIiBrbS9oXCJcclxuICAgIGh1bWlkaXR5LnRleHRDb250ZW50ID0gd2VhdGhlci5odW1pZGl0eSArIFwiICVcIlxyXG4gICAgdmlzaWJpbGl0eS50ZXh0Q29udGVudCA9IHdlYXRoZXIudmlzaWJpbGl0eSArIFwiIGttXCJcclxuICAgIHByZXNzdXJlLnRleHRDb250ZW50ID0gd2VhdGhlci5wcmVzc3VyZSArIFwiIGhQYVwiXHJcblxyXG4gICAgaWYgKHdlYXRoZXIuc25vdyA+IDApIHtcclxuICAgICAgICAvLyBzbm93IFxyXG4gICAgICAgIGljb24uc3JjID0gc25vd1xyXG4gICAgfSBlbHNlIGlmICh3ZWF0aGVyLndpbmRzcGVlZCA8IDEpIHtcclxuICAgICAgICAvLyBmb2cgXHJcbiAgICAgICAgaWNvbi5zcmMgPSBmb2dcclxuICAgIH0gZWxzZSBpZiAod2VhdGhlci53aW5kc3BlZWQgPiAzMCkge1xyXG4gICAgICAgIC8vIHdpbmQgXHJcbiAgICAgICAgaWNvbi5zcmMgPSB3aW5keVxyXG4gICAgfSBlbHNlIGlmICh3ZWF0aGVyLmNsb3VkY292ZXIgPiA5MCkge1xyXG4gICAgICAgIC8vIGNsb3VkeSBcclxuICAgICAgICBpY29uLnNyYyA9IGNsb3VkeVxyXG4gICAgfSBlbHNlIGlmICh3ZWF0aGVyLmNsb3VkY292ZXIgPiAyMCAmJiB3ZWF0aGVyLmNsb3VkY292ZXIgPCA5MCkge1xyXG4gICAgICAgIC8vIHBhcnRseS1jbG91ZHktZGF5XHJcbiAgICAgICAgaWNvbi5zcmMgPSBwYXJ0bHlDbG91ZHlEYXlcclxuICAgIH0gZWxzZSBpZiAod2VhdGhlci5jbG91ZGNvdmVyIDwgMjApIHtcclxuICAgICAgICAvLyBzdW5ueVxyXG4gICAgICAgIGljb24uc3JjID0gc3VubnlcclxuICAgIH0gZWxzZSBpZiAod2VhdGhlci5wcmVjaXAgPiAwKSB7XHJcbiAgICAgICAgLy8gcmFpblxyXG4gICAgICAgIGljb24uc3JjID0gcmFpblxyXG4gICAgfVxyXG5cclxuICAgIGNvbnNvbGUubG9nKHdlYXRoZXIpXHJcbn1cclxuXHJcbi8vIGRlZmF1bHQgd2VhdGhlclxyXG53ZWF0aGVyKClcclxuXHJcbi8vIHNlbGVjdCBpbnB1dCwgXCJjaGFuZ2VcIiBldmVudCBsaXN0ZW5lclxyXG5zZWxlY3RfaW5wdXQuYWRkRXZlbnRMaXN0ZW5lcihcImNoYW5nZVwiLCB3ZWF0aGVyKVxyXG5cclxuLy8gZ2V0IHRoZSBjdXJyZW50IGNpdHkgZGF0ZVxyXG5hc3luYyBmdW5jdGlvbiBnZXRDdXJyZW50Q2l0eVRpbWUoY2l0eSkge1xyXG4gICAgY29uc3QgZGF0ZSA9IG5ldyBEYXRlKCk7XHJcbiAgICAvLyBnZXR0aW5nIHRoZSB0aW1lem9uZSBmcm9tIHRoZSBwcm9taXNlXHJcbiAgICBjb25zdCB0aW1lWm9uZSA9IGF3YWl0IGdldEN1cnJlbnRUaW1lKGNpdHkpXHJcbiAgICAvLyBmb3JtYXQgdGhlIHRpbWV6b25lXHJcbiAgICBjb25zdCBmb3JtYXR0ZWRUaW1lem9uZSA9IG5ldyBJbnRsLkRhdGVUaW1lRm9ybWF0KFwiZW4tVVNcIiwge1xyXG4gICAgICAgIHRpbWVab25lOiBgJHt0aW1lWm9uZX1gLFxyXG4gICAgICAgIHRpbWVTdHlsZTogXCJzaG9ydFwiXHJcbiAgICB9KS5mb3JtYXQoZGF0ZSk7XHJcblxyXG4gICAgcmV0dXJuIGZvcm1hdHRlZFRpbWV6b25lO1xyXG59Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/index.js\n\n}");
 
 /***/ },
 
@@ -187,6 +257,18 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -201,6 +283,29 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
